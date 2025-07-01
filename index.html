@@ -32,31 +32,21 @@
   </style>
 </head>
 <body>
-  <h1>IPv6 Test Sayfası</h1>
-  <p>Tarayıcınızın IPv6 bağlantısını test ediyoruz...</p>
+  <h1>IPv6 Testi</h1>
   <div id="result">Test yapılıyor...</div>
 
   <script>
-    const ipv6TestImage = new Image();
-    let timeout;
-
-    ipv6TestImage.onload = function() {
-      clearTimeout(timeout);
-      document.getElementById('result').textContent = 'Tebrikler! IPv6 ile internete çıkabiliyorsunuz.';
-      document.getElementById('result').className = 'success';
-    };
-
-    ipv6TestImage.onerror = function() {
-      clearTimeout(timeout);
-      document.getElementById('result').textContent = 'IPv6 desteğiniz yok veya erişilemiyor.';
-      document.getElementById('result').className = 'fail';
-    };
-
-    ipv6TestImage.src = "https://[2607:f8b0:4005:805::200e]/favicon.ico";
-
-    timeout = setTimeout(() => {
-      ipv6TestImage.onerror();
-    }, 5000);
+    fetch('https://api64.ipify.org?format=json', { timeout: 5000 })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').textContent = 'Tebrikler! IPv6 adresiniz: ' + data.ip;
+        document.getElementById('result').className = 'success';
+      })
+      .catch(error => {
+        document.getElementById('result').textContent = 'IPv6 desteğiniz yok veya erişilemiyor.';
+        document.getElementById('result').className = 'fail';
+      });
   </script>
 </body>
 </html>
+
