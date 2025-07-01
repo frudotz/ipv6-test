@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basit IPv6 Testi</title>
+  <meta charset="UTF-8">
+  <title>IPv6 Test (kurnaz yöntem)</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin-top: 50px;
-      background: #f2f2f2;
-    }
-    h1 {
-      color: #333;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 1.2em;
-      padding: 10px;
-      display: inline-block;
-      border-radius: 8px;
-    }
-    .success {
-      background-color: #c8e6c9;
-      color: #256029;
-    }
-    .fail {
-      background-color: #ffcdd2;
-      color: #b71c1c;
-    }
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .yes { color: green; }
+    .no { color: red; }
   </style>
 </head>
 <body>
-  <h1>IPv6 Testi</h1>
-  <div id="result">Test yapılıyor...</div>
+  <h1>IPv6 Test Sayfası</h1>
+  <p>IPv6 erişiminiz var mı diye kontrol ediyoruz...</p>
+  <div id="result">Yükleniyor...</div>
 
   <script>
-    fetch('https://api64.ipify.org?format=json', { timeout: 5000 })
+    fetch('https://api64.ipify.org?format=json')
       .then(response => response.json())
       .then(data => {
-        document.getElementById('result').textContent = 'Tebrikler! IPv6 adresiniz: ' + data.ip;
-        document.getElementById('result').className = 'success';
+        const ip = data.ip;
+        const resultDiv = document.getElementById('result');
+
+        if (ip.includes(':')) {
+          resultDiv.innerHTML = `<span class="yes">✅ IPv6 erişiminiz var!</span><br>IPv6 adresiniz: ${ip}`;
+        } else {
+          resultDiv.innerHTML = `<span class="no">❌ IPv6 erişiminiz yok, IPv4 ile bağlandınız.</span><br>IPv4 adresiniz: ${ip}`;
+        }
       })
       .catch(error => {
-        document.getElementById('result').textContent = 'IPv6 desteğiniz yok veya erişilemiyor.';
-        document.getElementById('result').className = 'fail';
+        document.getElementById('result').innerHTML = 'Hata oluştu: ' + error;
       });
   </script>
 </body>
 </html>
-
