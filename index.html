@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basit IPv6 Testi</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: #f2f2f2;
+    }
+    h1 {
+      color: #333;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+    .success {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    .fail {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <h1>IPv6 Test Sayfası</h1>
+  <p>Tarayıcınızın IPv6 bağlantısını test ediyoruz...</p>
+  <div id="result">Test yapılıyor...</div>
+
+  <script>
+    const ipv6TestImage = new Image();
+    let timeout;
+
+    ipv6TestImage.onload = function() {
+      clearTimeout(timeout);
+      document.getElementById('result').textContent = 'Tebrikler! IPv6 ile internete çıkabiliyorsunuz.';
+      document.getElementById('result').className = 'success';
+    };
+
+    ipv6TestImage.onerror = function() {
+      clearTimeout(timeout);
+      document.getElementById('result').textContent = 'IPv6 desteğiniz yok veya erişilemiyor.';
+      document.getElementById('result').className = 'fail';
+    };
+
+    ipv6TestImage.src = "https://[2607:f8b0:4005:805::200e]/favicon.ico";
+
+    timeout = setTimeout(() => {
+      ipv6TestImage.onerror();
+    }, 5000);
+  </script>
+</body>
+</html>
