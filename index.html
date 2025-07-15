@@ -1,0 +1,182 @@
+<html lang="tr">
+<head>
+  <!-- Primary Meta Tags -->
+  <title>IPv6 Erişim Testi - @frudotz</title>
+  <meta name="title" content="IPv6 Erişim Testi - @frudotz">
+  <meta name="author" content="H. Arda Karabacak (@frudotz)">
+  <meta name="theme-color" content="#000000">
+  <meta name="background-color" content="#FFFFFF">
+  <meta name="keywords" content="IPv6 testi, IP adresi, internet bağlantısı, frudotz, H. Arda Karabacak, ağ testi">
+  <meta name="description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://v6.frudotz.com">
+  <meta property="og:title" content="IPv6 Erişim Testi - @frudotz">
+  <meta property="og:description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası, @frudotz tarafından sunulmaktadır.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/frudotz.png">
+  <meta property="og:image:type" content="image/png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://v6.frudotz.com">
+  <meta property="twitter:title" content="IPv6 Erişim Testi - @frudotz">
+  <meta property="twitter:description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası.">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/frudotz.png">
+  <!-- Includes & Preloads for Cache -->
+  <link rel="icon" href="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style>
+* {
+    transition: all .5s;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none
+}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    background-color: #03072a;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bg-circle, .bg-triangle {
+    position: absolute;
+
+  }
+  .bg-circle {
+    width: 490px;
+    height: 490px;
+    background: linear-gradient(135deg, #0058f8, #0086f7);
+    border-radius: 50%;
+    top: 7%;
+    left: 20.5%;
+  }
+.bg-triangle {
+  width: 500px;
+  height: 500px;
+  background-image: url('triangle.svg');
+  background-size: cover;
+  background-repeat: round;
+  position: absolute;
+  bottom: 16.5%;
+  right: 22%;
+}
+
+  .card {
+    background-color: rgba(255,255,255,.06);
+ /* border: 1px solid rgba(255,255,255,0.1); */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,.2);
+    box-shadow: 20px 20px 22px rgba(0,0,0,.2);
+    border-radius: 8px;
+    padding: 30px 40px;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    max-width: 400px;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 1.6em;
+    color: #90caf9;
+  }
+  p {
+    margin-bottom: 20px;
+    color: #bbb;
+  }
+  #result {
+    /*font-size: 1em;*/
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: rgba(255,255,255,.06);
+  }
+  .yes {
+    color: #69f0ae;
+  }
+  .no {
+    color: #f48fb1;
+  }
+  .loading {
+    color: #fff59d;
+  }
+  strong {
+    font-site: 1em;
+    font-weight: 600;
+  }
+  code {
+    font-size: 1.25em;
+    font-family: monospace;
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-circle"></div>
+<div class="bg-triangle"></div>
+
+
+
+<div class="card">
+  <h1>🌐 IPv6 Test</h1>
+  <p>IPv6 erişiminizi kontrol ediyoruz...</p>
+  <div id="result" class="loading">Yükleniyor...</div>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPYKMJ9H9V"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-VPYKMJ9H9V");</script>
+<script>/*<![CDATA[*/document.onkeydown=function(b){if(event.keyCode==123){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="I".charCodeAt(0)){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="C".charCodeAt(0)){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="J".charCodeAt(0)){return false}if(b.ctrlKey&&b.keyCode=="S".charCodeAt(0)){return false}if(b.ctrlKey&&b.keyCode=="U".charCodeAt(0)){return false}};/*]]>*/</script>
+
+
+<script>
+const resultDiv = document.getElementById('result');
+  let dots = 0;
+  const intervalId = setInterval(() => {
+    dots = (dots % 3) + 1; // 1,2,3 şeklinde döner
+    let dotsStr = '.'.repeat(dots);
+    resultDiv.textContent = `Yükleniyor${dotsStr}`;
+  }, 500);
+
+  setTimeout(() => {
+    clearInterval(intervalId);
+    resultDiv.textContent = 'Yükleniyor...';
+
+    fetch('https://api64.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        const ip = data.ip;
+        if (ip.includes(':')) {
+          resultDiv.innerHTML = `✅ <strong>IPv6 erişiminiz var!</strong><br>IPv6 adresiniz: <code>${ip}</code>`;
+          resultDiv.className = 'yes';
+        } else {
+          resultDiv.innerHTML = `❌ <strong>IPv6 erişiminiz yok, IPv4 ile bağlandınız.</strong><br>IPv4 adresiniz: <code>${ip}</code>`;
+          resultDiv.className = 'no';
+        }
+      })
+      .catch(error => {
+        resultDiv.innerHTML = '🚫 <strong>Hata:</strong> IPv6 testi yapılamadı.';
+        resultDiv.className = 'no';
+      });
+
+  }, 4500);
+</script>
+
+</body>
+</html>
