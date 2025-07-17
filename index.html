@@ -1,0 +1,285 @@
+<html lang="tr">
+<head>
+  <!-- Primary Meta Tags -->
+  <title>IPv6 Erişim Testi - @frudotz</title>
+  <meta name="title" content="IPv6 Erişim Testi - @frudotz">
+  <meta name="author" content="H. Arda Karabacak (@frudotz)">
+  <meta name="theme-color" content="#000000">
+  <meta name="background-color" content="#FFFFFF">
+  <meta name="keywords" content="IPv6 testi, IP adresi, internet bağlantısı, frudotz, H. Arda Karabacak, ağ testi">
+  <meta name="description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://v6.frudotz.com">
+  <meta property="og:title" content="IPv6 Erişim Testi - @frudotz">
+  <meta property="og:description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası, @frudotz tarafından sunulmaktadır.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/frudotz.png">
+  <meta property="og:image:type" content="image/png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://v6.frudotz.com">
+  <meta property="twitter:title" content="IPv6 Erişim Testi - @frudotz">
+  <meta property="twitter:description" content="IPv6 erişiminizi hızlıca kontrol edin! Basit ve güvenilir IPv6 test sayfası.">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/frudotz.png">
+  <!-- Includes & Preloads for Cache -->
+  <link rel="icon" href="https://raw.githubusercontent.com/frudotz/frudotz.github.io/main/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    transition: all .5s;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none
+}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    background-color: #03072a;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.bg-circle {
+  position: absolute;
+  width: 25.52vw; /* 490 / 1920 * 100 */
+  height: 25.52vw;
+  background: linear-gradient(135deg, #0058f8, #0086f7);
+  border-radius: 50%;
+  top: 6.48vh;     /* 70 / 1080 * 100 */
+  left: 20.57vw;   /* 394 / 1920 * 100 */
+}
+
+.bg-triangle {
+  position: absolute;
+  width: 26.04vw; /* 500 / 1920 * 100 */
+  height: 26.04vw;
+  background-image: url('triangle.svg');
+  background-size: cover;
+  background-repeat: round;
+  bottom: 16.5vh;
+  right: 22vw;
+}
+
+
+  .card {
+    background-color: rgba(255,255,255,.06);
+ /* border: 1px solid rgba(255,255,255,0.1); */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,.2);
+    box-shadow: 20px 20px 22px rgba(0,0,0,.2);
+    border-radius: 8px;
+    padding: 30px 40px;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    max-width: 400px;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 1.6em;
+    color: #90caf9;
+  }
+  p {
+    margin-bottom: 20px;
+    color: #bbb;
+  }
+
+  #result {
+    /*font-size: 1em;*/
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: rgba(255,255,255,.06);
+  }
+  .yes {
+    color: #69f0ae;
+  }
+  .no {
+    color: #f48fb1;
+  }
+  .loading {
+    color: #fff59d;
+  }
+  strong {
+    font-site: 1em;
+    font-weight: 600;
+  }
+  code {
+    font-size: 1.25em;
+    font-family: monospace;
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    word-break: break-all;
+    overflow-wrap: anywhere; 
+  }
+  a#peering {
+  text-decoration: none;
+  color: inherit;
+}
+  a#peering:hover {
+    color: -webkit-link;
+}
+
+@media (max-width: 1080px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .bg-circle {
+    width: 81vw;
+    height: 81vw;
+    top: 6.5vh;
+    left: -43.5vw;
+  }
+  .bg-triangle {
+    width: 135vw;
+    height: 135vw;
+    bottom: 7vh;
+    right: -90vw;
+    clip-path: inset(0 65% 0 0);
+  }
+  .card {
+    max-width: 88vw;
+    padding: 30px 30px;
+  }
+  code {
+    font-size: 1.1em;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-circle"></div>
+<div class="bg-triangle"></div>
+
+
+
+<div class="card">
+  <h1>🌐 IPv6 Test</h1>
+  <p>IPv6 erişiminizi kontrol ediyoruz...</p>
+  <div id="result" class="loading">Yükleniyor...</div>
+  <p id="isp" title="" style="margin-bottom: -16px; font-size: 11.8px; display: none"></p>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPYKMJ9H9V"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-VPYKMJ9H9V");</script>
+<script>/*<![CDATA[*/document.onkeydown=function(b){if(event.keyCode==123){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="I".charCodeAt(0)){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="C".charCodeAt(0)){return false}if(b.ctrlKey&&b.shiftKey&&b.keyCode=="J".charCodeAt(0)){return false}if(b.ctrlKey&&b.keyCode=="S".charCodeAt(0)){return false}if(b.ctrlKey&&b.keyCode=="U".charCodeAt(0)){return false}};/*]]>*/</script>
+
+
+<script>
+const resultDiv = document.getElementById('result');
+
+
+let dots = 0;
+const dotInterval = setInterval(() => {
+  dots = (dots % 3) + 1; // 1,2,3 tekrar
+  let dotsStr = '.'.repeat(dots);
+  resultDiv.textContent = `Yükleniyor${dotsStr}`;
+}, 500);
+
+
+function getRandomDelay(min = 1500, max = 5000) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+setTimeout(() => {
+  clearInterval(dotInterval);
+  resultDiv.textContent = 'Yükleniyor...';
+
+  fetch('https://api64.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ip = data.ip;
+      if (ip.includes(':')) {
+        resultDiv.innerHTML = `✅ <strong>IPv6 erişiminiz var!</strong><br>IPv6 adresiniz: <a href="" id="peering" target="_blank" title="Peering Bilgileri"><code>${ip}</code><a/>`;
+	document.getElementById('peering').href = `https://bgp.tools/prefix/${ip}/32#connectivity`;
+        resultDiv.className = 'yes';
+      } else {
+        resultDiv.innerHTML = `❌ <strong>IPv6 erişiminiz yok.</strong><br>IPv4 adresiniz: <a href="" id="peering" target="_blank" title="Peering Bilgileri"><code>${ip}</code><a/>`;
+	document.getElementById('peering').href = `https://bgp.tools/prefix/${ip}/24#connectivity`;
+        resultDiv.className = 'no';
+      }
+    })
+    .catch(error => {
+      resultDiv.innerHTML = '🚫 <strong>Hata:</strong> IPv6 testi yapılamadı.';
+      resultDiv.className = 'no';
+    });
+  fetch("https://ipinfo.io/json")
+    .then(res => res.json())
+    .then(data => {
+      if (data.org) {
+        document.getElementById("isp").textContent = `${data.org} - ${data.city}, ${data.region}`;
+	document.getElementById("isp").style.display = `block`;
+      } else {
+        document.getElementById("isp").textContent = "İnternet sağlayıcı bilgisi alınamadı.";
+	document.getElementById("isp").style.display = `block`;
+      }
+    })
+    .catch(err => {
+      console.error("ISP bilgisi alınamadı:", err);
+    });
+
+function getBrowserInfo() {
+  const ua = navigator.userAgent;
+  let browser = "Bilinmiyor", version = "", os = "Bilinmiyor";
+
+  // Tarayıcı
+  if (/firefox\/([\d.]+)/i.test(ua)) {
+    browser = "Firefox";
+    version = RegExp.$1;
+  } else if (/edg\/([\d.]+)/i.test(ua)) {
+    browser = "Edge";
+    version = RegExp.$1;
+  } else if (/chrome\/([\d.]+)/i.test(ua)) {
+    browser = "Chrome";
+    version = RegExp.$1;
+  } else if (/safari\/([\d.]+)/i.test(ua) && !/chrome/i.test(ua)) {
+    browser = "Safari";
+    version = RegExp.$1;
+  }
+
+  // İşletim Sistemi
+  if (/Windows NT 10.0/i.test(ua)) os = "Windows 10/11";
+  else if (/Windows NT 6.3/i.test(ua)) os = "Windows 8.1";
+  else if (/Windows NT 6.1/i.test(ua)) os = "Windows 7";
+  else if (/Mac OS X/i.test(ua)) os = "macOS";
+  else if (/Android/i.test(ua)) os = "Android";
+  else if (/iPhone|iPad/i.test(ua)) os = "iOS";
+  else if (/Linux/i.test(ua)) os = "Linux";
+
+  return `${browser} ${version} - ${os}`;
+}
+
+const start = Date.now();
+fetch("https://dns.google/resolve?name=frudotz.com")
+  .then(() => {
+    const latency = Date.now() - start;
+    console.log(`${getBrowserInfo()} - Ping: ${latency}ms`);
+    document.getElementById('isp').title = `${getBrowserInfo()} - Ping: ${latency}ms`;
+  });
+
+
+}, getRandomDelay());
+</script>
+
+
+</body>
+</html>
